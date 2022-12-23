@@ -57,14 +57,12 @@ public class C05_MavenClassWork {
         System.out.println("\n VUR DEDİK ÖLDÜRDÜN BE HOCAM !!!!!!!");
 
 //        ~ close driver !
-
         Thread.sleep(2000);
         driver.close();
     }
 
     public static void compareTwoList(List<String> a, List<String> b) {
-        System.out.println(goruntulemeListesi.equals(sepetListesi) ? "Listeler Aynı" : "Listeler Farklı");
-
+        System.out.println(a.equals(b) ? "Listeler Aynı" : "Listeler Farklı");
     }
 
     public static void getName(List<WebElement> a, List<String> b) {
@@ -78,7 +76,7 @@ public class C05_MavenClassWork {
 
     public static void allClick(List<WebElement> a) throws InterruptedException {
 
-        for (WebElement k : addToCart) {
+        for (WebElement k : a) {
             k.click();
             Thread.sleep(2000);
         }
