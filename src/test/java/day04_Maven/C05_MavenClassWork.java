@@ -14,9 +14,6 @@ import java.util.List;
 public class C05_MavenClassWork {
     static List<String> goruntulemeListesi = new ArrayList<>();
     static List<String> sepetListesi = new ArrayList<>();
-    static List<WebElement> listNames;
-    static List<WebElement> phonesNames;
-    static List<WebElement> addToCart;
 
     static WebDriver driver = new ChromeDriver();
 
@@ -33,32 +30,29 @@ public class C05_MavenClassWork {
         driver.findElement(By.xpath("//*[text()='Phones & PDAs']")).click();
 
 //        ~ get the brandName of phones
-        phonesNames = driver.findElements(By.cssSelector("div.caption>h4>a"));
+        List<WebElement> phonesNames = driver.findElements(By.cssSelector("div.caption>h4>a"));
 
         getName(phonesNames, goruntulemeListesi);
         Thread.sleep(2000);
 
 //        ~ click on add to button for all elements
-        addToCart = driver.findElements(By.xpath("//*[text()='Add to Cart']"));
-
+        List<WebElement> addToCart = driver.findElements(By.xpath("//*[text()='Add to Cart']"));
         allClick(addToCart);
 
 //        ~ click on black total added cart button
         driver.findElement(By.id("cart-total")).click();
 
 //        ~ get the names of list from the cart
-        listNames = driver.findElements(By.cssSelector("td.text-left>a"));
+        List<WebElement> listNames = driver.findElements(By.cssSelector("td.text-left>a"));
 
         getName(listNames, sepetListesi);
 
 //        ~ compare the names from displaying list and cart list
         compareTwoList(goruntulemeListesi, sepetListesi);
 
-        System.out.println("\n VUR DEDİK ÖLDÜRDÜN BE HOCAM !!!!!!!");
-
 //        ~ close driver !
         Thread.sleep(2000);
-        driver.close();
+//        driver.close();
     }
 
     public static void compareTwoList(List<String> a, List<String> b) {

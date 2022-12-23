@@ -20,7 +20,7 @@ public class C05_ClassWork {
     @After
     public void tearDown() throws InterruptedException {
         Thread.sleep(3000);
-        driver.close();
+//        driver.close();
     }
     @Test
     public void test01() throws InterruptedException {
