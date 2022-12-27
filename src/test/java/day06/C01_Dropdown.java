@@ -78,7 +78,7 @@ public class C01_Dropdown {
 
     @After
     public void tearDown(){
-        driver.close();
+//        driver.close();
     }
 
     /*

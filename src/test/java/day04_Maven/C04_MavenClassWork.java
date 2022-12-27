@@ -62,7 +62,7 @@ public class C04_MavenClassWork {
             System.out.println("Ürün sepete eklenemedi");
 
 //9. Sayfayi kapatin
-        driver.close();
+//        driver.close();
     }
 
     public static WebElement findWithId(String key) {

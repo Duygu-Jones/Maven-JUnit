@@ -28,14 +28,14 @@ public class C02_DropdownResuable {
     }
 
     // RESUABLE METHOD :Dropdown icin tekrar tekrar kullanabilecegimiz method olusturalim
-    public void selectFromDropDown(WebElement dropdown , String secenek){
+    public void selectFromDropDown(WebElement dropdown, String secenek) {
         // driver.findElement(By.xpath("//select[@id='year']")),"2005");
         // driver.findElement(By.xpath("//select[@id='month']")),"January");
         // driver.findElement(By.xpath("//select[@id='day']")),"10");
 
         List<WebElement> options = dropdown.findElements(By.tagName("option"));//Tum option'lari return eder
-        for (WebElement w : options){
-            if (w.getText().equals(secenek)){
+        for (WebElement w : options) {
+            if (w.getText().equals(secenek)) {
                 w.click();
                 break;
             }
@@ -43,17 +43,11 @@ public class C02_DropdownResuable {
     }
 
     @Test
-    public void test01(){
-        selectFromDropDown(driver.findElement(By.xpath("//select[@id='year']")),"2005");
+    public void test01() {
+        selectFromDropDown(driver.findElement(By.xpath("//select[@id='year']")), "2005");
     }
 
-    public static WebElement findWithXPath(String key,String secenek){
-        return driver.findElement(By.xpath(key));
-
-        }
-
-
-    }
+}
 
 
 
