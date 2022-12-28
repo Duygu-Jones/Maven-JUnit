@@ -2,7 +2,6 @@ package practice;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -10,49 +9,57 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
-
+import java.util.List;
 
 public class P06 {
-    WebDriver driver;
-    @Before
-    public void setUp() throws Exception {
-        WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
+    WebDriver driver;
+    List<WebElement> resim ;
+
+    @Before
+    public void setUp(){
+
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().window().maximize();
     }
 
     @After
-    public void tearDown() throws Exception {
-        Thread.sleep(1000);
-        driver.close();
+    public void tearDown(){
+     driver.close();
+
     }
 
     @Test
-    public void test01() {
-        // https://www.amazon.com/ sayfasina gidin
-        driver.get("https://www.amazon.com/ ");
+    public void test01() throws InterruptedException {
 
-        // dropdown'dan "Books" secenegini secin
-        WebElement ddm = driver.findElement(By.cssSelector("select[id='searchDropdownBox']"));
+//        - ebay sayfasına gidiniz
+        driver.get("https://ebay.com");
 
-        //Select objesi olusturalim
-        Select select =new Select(ddm);
-        select.selectByVisibleText("Books");
+//        - electronics bölümüne tıklayınız
+        driver.findElement(By.xpath("(//*[text()='Electronics'])[2]")).click();
 
-        // arama cubuguna "Java" aratın
+//        - Genişliği 225 ve Uzunluğu 225 olan resimlerin hepsine tıklayalım
 
-        driver.findElement(By.cssSelector("input#twotabsearchtextbox")).sendKeys("Java", Keys.ENTER);
+        resim = driver.findElements(By.xpath("//*[@width='225' and @height='225']"));
 
-        // arama sonuclarinin Java icerdigini test edin
-        WebElement result = driver.findElement(By.cssSelector("div[class='sg-col-14-of-20 sg-col s-breadcrumb sg-col-10-of-16 sg-col-6-of-12'] span:nth-child(3)"));
+        for (int i = 0; i < resim.size() ; i++) {
 
-        String result1 = result.getText();
-        Assert.assertTrue(result1.contains("Java"));
+            resim = driver.findElements(By.xpath("//*[@width='225' and @height='225']"));
+
+            resim.get(i).click();
+            Thread.sleep(500);
+            driver.navigate().back();
+            Thread.sleep(500);
+            System.out.println(i+1+" .başlık : " + driver.getTitle());
+            Thread.sleep(500);
+        }
+
+//        - Her sayfanın sayfa başlığını yazdıralım
+//        - sayfayı kapatalım
 
     }
 }
