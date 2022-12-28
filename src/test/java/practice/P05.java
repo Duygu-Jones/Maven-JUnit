@@ -45,6 +45,7 @@ public class P05 {
     public void tearDown(){
         String [] sonuc = driver.findElement(By.cssSelector("#result-stats")).getText().split(" ");
         System.out.println(sonuc[1]);
+
     }
 
     @Test
