@@ -1,4 +1,4 @@
-package day06;
+package day06_DropDown;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;

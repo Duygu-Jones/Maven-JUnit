@@ -1,4 +1,4 @@
-package day06;
+package day06_DropDown;
 
 public class SeleniumNotes {
 

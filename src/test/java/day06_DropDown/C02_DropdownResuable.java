@@ -1,4 +1,4 @@
-package day06;
+package day06_DropDown;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Before;
@@ -45,6 +45,9 @@ public class C02_DropdownResuable {
     @Test
     public void test01() {
         selectFromDropDown(driver.findElement(By.xpath("//select[@id='year']")), "2005");
+        selectFromDropDown(driver.findElement(By.id("month")),"November");
+        selectFromDropDown(driver.findElement(By.id("day")),"10");
+        selectFromDropDown(driver.findElement(By.id("state")),"Texas");
     }
 
 }
