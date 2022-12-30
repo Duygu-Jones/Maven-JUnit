@@ -41,5 +41,16 @@ public abstract class TestBase {
         driver.switchTo().window(origin);
     }
 
+    public static void switchToWindowUrl(String targetUrl) {
+        String origin = driver.getWindowHandle();
+        for (String handle : driver.getWindowHandles()) {
+            driver.switchTo().window(handle);
+            if (driver.getCurrentUrl().equals(targetUrl)) {
+                return;
+            }
+        }
+        driver.switchTo().window(origin);
+    }
+
 
 }
