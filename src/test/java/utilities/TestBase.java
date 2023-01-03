@@ -15,7 +15,7 @@ public abstract class TestBase {
 
     //  setUp
     @Before
-    public void setUp (){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -41,16 +41,14 @@ public abstract class TestBase {
         driver.switchTo().window(origin);
     }
 
-        public static void switchToWindowUrl(String targetUrl) {
-            String origin = driver.getWindowHandle();
-            for (String handle : driver.getWindowHandles()) {
-                driver.switchTo().window(handle);
-                if (driver.getCurrentUrl().equals(targetUrl)) {
-                    return;
-                }
+    public static void switchToWindowUrl(String targetUrl) {
+        String origin = driver.getWindowHandle();
+        for (String handle : driver.getWindowHandles()) {
+            driver.switchTo().window(handle);
+            if (driver.getCurrentUrl().equals(targetUrl)) {
+                return;
             }
-            driver.switchTo().window(origin);
         }
-
-
+        driver.switchTo().window(origin);
+    }
 }
