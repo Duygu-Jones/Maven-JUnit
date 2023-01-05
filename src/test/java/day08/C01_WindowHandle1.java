@@ -5,11 +5,13 @@ import org.openqa.selenium.By;
 import utilities.TestBase;
 import java.util.Set;
 public class C01_WindowHandle1 extends TestBase {
-    //    Tests package’inda yeni bir class olusturun: WindowHandle
+
+//    Tests package’inda yeni bir class olusturun: WindowHandle
 //    https://the-internet.herokuapp.com/windows adresine gidin.
     @Test
     public void handleWindowTest() throws InterruptedException {
         driver.get("https://the-internet.herokuapp.com/windows");
+
 //        ILK SAYFANIN IDSINI ALALIM
         String window1Handle = driver.getWindowHandle();
 

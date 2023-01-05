@@ -5,8 +5,6 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import utilities.TestBase;
 
-import java.util.Set;
-
 public class H02 extends TestBase {
     @Test
     public void windowHandleTest() {

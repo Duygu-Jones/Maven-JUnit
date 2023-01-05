@@ -26,17 +26,16 @@ public class H01 extends TestBase {
 
 //        Paragrafdaki yaziyi silelim
         driver.switchTo().frame(0);
-        driver.findElement(By.cssSelector("body[id='tinymce']>p")).clear();
+        WebElement yazi = driver.findElement(By.cssSelector("body[id='tinymce']>p"));
+        yazi.clear();
 
 //        Sonrasinda paragrafa “iframein icindeyim” yazisini yazdıralım
-        driver.findElement(By.cssSelector("body[id='tinymce']>p")).sendKeys("iframenin icindeyim");
+        yazi.sendKeys("iframenin icindeyim");
 
-//        Alt kısımdaki yazının ‘Elemental Selenium’ yazisini içerdiğini test edelim
+//        Alt kısımdaki yazının ‘Elemental Selenium’ yazisini içerdiğini test edelim.
         driver.switchTo().defaultContent();
         String altKisim = driver.findElement(By.cssSelector("div[style='text-align: center;']")).getText();
         Assert.assertTrue(altKisim.contains("Elemental Selenium"));
-
-
 
     }
 
