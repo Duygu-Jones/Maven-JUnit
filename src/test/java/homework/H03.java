@@ -9,4 +9,5 @@ public class H03 {
     //“Click and hold" kutusuna basili tutun
     //7-“Click and hold" kutusunda cikan yaziyi yazdirin
     //8- “Double click me" butonunu cift tiklayin
+
 }

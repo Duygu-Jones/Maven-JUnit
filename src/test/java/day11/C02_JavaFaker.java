@@ -32,7 +32,6 @@ public class C02_JavaFaker {
         System.out.println(faker.address().zipCode());
 //        rasgele 15 haneli numara
         System.out.println(faker.number().digits(15));
-
 /*
 
 TEST DATA : kullanicai adi, sifre, tel no, email, sehir, kredi kart no,...

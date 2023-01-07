@@ -19,4 +19,5 @@ public class H06 {
     //Cinsiyeti secin
     //Isaretlediginiz cinsiyetin secili, diger cinsiyet kutusunun secili olmadigini test edin.
     //Sayfayi kapatin
+    
 }

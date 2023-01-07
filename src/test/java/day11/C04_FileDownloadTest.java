@@ -24,5 +24,6 @@ public class C04_FileDownloadTest extends TestBase {
         String filePath = System.getProperty("user.home")+"\\Downloads\\b10 all test cases, code.docx";
         boolean indirildimi = Files.exists(Paths.get(filePath));
         Assert.assertTrue(indirildimi);
+
     }
 }

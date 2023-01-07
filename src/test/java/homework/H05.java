@@ -22,4 +22,5 @@ public class H05 {
     //5-üçüncü ürüne relative locater kullanarak tıklayin
     //6-title ve fiyat bilgilerini assign edelim ve ürünü sepete ekleyin  Test 4
     //1-sepetteki ürünlerle eklediğimiz ürünlerin aynı olduğunu isim ve fiyat olarak doğrulayın
+
 }

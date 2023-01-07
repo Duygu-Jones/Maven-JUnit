@@ -27,9 +27,5 @@ public class faker1 extends TestBase {
                 .build()
                 .perform();
 
-
-
-
-
     }
 }

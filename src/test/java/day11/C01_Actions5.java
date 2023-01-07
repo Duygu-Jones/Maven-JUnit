@@ -28,6 +28,5 @@ public class C01_Actions5 extends TestBase {
                 .sendKeys(" cok pahali"+Keys.ENTER) //shift'siz olarak "çok pahali" yaz
                 .build() //birden fazla actions methodu kullanildiğinde tercihen build() kullanilir.
                 .perform();
-
     }
 }
