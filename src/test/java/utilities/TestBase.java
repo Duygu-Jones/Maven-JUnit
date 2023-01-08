@@ -42,6 +42,17 @@ public abstract class TestBase {
 //        driver.quit();
     }
 
+    public void selectFromDropDown(WebElement dropdown, String secenek) {
+
+        List<WebElement> options = dropdown.findElements(By.tagName("option"));//Tum option'lari return eder
+        for (WebElement w : options) {
+            if (w.getText().equals(secenek)) {
+                w.click();
+                break;
+            }
+        }
+    }
+
     //    MULTIPLE WINDOW
     public static void switchToWindow(String targetTitle) {
         String origin = driver.getWindowHandle();

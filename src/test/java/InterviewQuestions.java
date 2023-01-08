@@ -35,7 +35,7 @@ public class InterviewQuestions {
     -Select objecti'i ile istedigim secenegi secerim
     NOT: Select object'i olusturma nedenim, dropdownlarin Select class'i ile olusturulmasi
 
-    3. Tum dropdown seceneklerini nasil prin ederiz?
+    3. Tum dropdown seceneklerini nasil print ederiz?
     -Tum dropdown elementlerini getOptions() methodu ile listeye koyariz
     -sonra secenekleri loop ile yazdirabiliriz.
 
@@ -165,7 +165,28 @@ Bu tur islemlerde sendKeys metodu kullaninir.
     7. API call lar
     8. Documantasyonlar. Ognegin, API swagger documani.
     9. Java Faker da fake data almak icin kullanyoruz
-    NERDEN GELMEZ : end user -kullanicidan, scrum master,
+    NERDEN GELMEZ : end user -kullanicidan, scrum master
+
+    -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+* * IMPLICTY and EXPLICIT WAIT * *
+
+impicitly wait : Sayfa üzerindeki tüm öğeler için zaman aşımı
+explicitly wait  : belirli elementler için zaman aşımı
+
+    -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+* * MAVEN, JUnıt, DropDown
+
+Maven : Bir projenin inşa edilebilmesi için gerekli tüm bilgileri içeren proje yönetim aracıdır.
+
+JUnit : Java dili için yazılmış bir java kütüphanesidir. Java kodlarının beklendiği gibi çalışıp
+        çalışmadığını kontrol eder ve kod kalitesini artırmamızı sağlar
+
+DropDown : Dropdown menüler, listeden seçim yapmayı sağlamak amacıyla kullanılan bir açılır menüdür.
+           Select objesi oluşturularak elde ettiğimiz methodlar ile dropdown içerisinden istediğimiz seçimi yapabiliriz.
+           Bu methodlar : selectByIndex(), selectByValue() ve selectByVisibleText()'dir. Aktif olarak kullanımı
+           en makul ve kullanıslı olan method ise selectByVisibleText()'dir.
 
  */
 
