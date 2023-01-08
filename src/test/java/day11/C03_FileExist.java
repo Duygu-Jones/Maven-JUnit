@@ -11,9 +11,6 @@ public class C03_FileExist {
     // Masaüstünde bir dosyanın varlığını test et
     @Test
     public void isExistTest() {
-
-//        WebElement uploadFile = driver.findElement(By.xpath("//input[@name='upload_file']"));
-//        uploadFile.sendKeys("C:\\Users\\bacan\\OneDrive\\Masaüstü\\SeleniumLMS.pdf");
         
         String userDIR = System.getProperty("user.dir");
         System.out.println("userDIR = " + userDIR);

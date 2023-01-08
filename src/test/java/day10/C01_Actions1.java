@@ -29,5 +29,6 @@ public class C01_Actions1 extends TestBase {
 
 //    Tamam diyerek alert’i kapatın
         driver.switchTo().alert().accept();
+
     }
 }
