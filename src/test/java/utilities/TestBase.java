@@ -103,9 +103,23 @@ public abstract class TestBase {
         return element;
     }
 
-    /*   HARD WAIT:
-        @param : second
-    */
+    //Js Executer Css
+    public static void jsClickCss(String key){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+        WebElement elementName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(key)));
+        js.executeScript("arguments[0].click();",elementName);
+    }
+
+    //Js Executer xPath
+    public static void jsClickXPath(String key){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+        WebElement elementName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(key)));
+        js.executeScript("arguments[0].click();",elementName);
+    }
+
+    //   HARD WAIT
     public static void waitFor(int seconds){
         try {
             Thread.sleep(seconds*1000);
