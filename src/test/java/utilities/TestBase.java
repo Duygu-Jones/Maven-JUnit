@@ -89,6 +89,12 @@ public abstract class TestBase {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(key)));
         return element;
     }
+    public static WebElement findIdx(String key){
+
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(15));
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(key)));
+        return element;
+    }
     public static WebElement findCss(String key){
 
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(15));
@@ -167,6 +173,7 @@ public abstract class TestBase {
 
     //    DYNAMIC SELENIUM WAITS:
 //===============Explicit Wait==============//
+
     public static WebElement waitForVisibility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));
@@ -193,6 +200,7 @@ public abstract class TestBase {
             }
         }
     }
+
     //    This can be used when a new page opens
     public static void waitForPageToLoad(long timeout) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
@@ -236,12 +244,11 @@ public abstract class TestBase {
     public static List<String> getElementsText(By locator) {
         List<WebElement> elements = driver.findElements(locator);
         List<String> elementText = new ArrayList<>();
-        for (WebElement el : elements) {
-            if (!el.getText().isEmpty()) {
-                elementText.add(el.getText());
+        for (WebElement w : elements) {
+            if (!w.getText().isEmpty()) {
+                elementText.add(w.getText());
             }
         }
         return elementText;
     }
-    
 }

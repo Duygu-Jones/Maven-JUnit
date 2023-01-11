@@ -16,7 +16,6 @@ public class ClassWork01 {
 
     static WebDriver driver;
     static String gorunum;
-    static String x;
 
     @Before
     public void setUp() {

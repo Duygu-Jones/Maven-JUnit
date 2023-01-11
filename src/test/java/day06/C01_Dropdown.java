@@ -91,7 +91,7 @@ public class C01_Dropdown {
         -Select objecti'i ile istedigim secenegi secerim
         NOT: Select object'i olusturma nedenim, dropdownlarin Select class'i ile olusturulmasi
 
-        3. Tum dropdown seceneklerini nasil prin ederiz?
+        3. Tum dropdown seceneklerini nasil print ederiz?
         -Tum dropdown elementlerini getOptions() methodu ile listeye koyariz
         -sonra secenekleri loop ile yazdirabiliriz.
 

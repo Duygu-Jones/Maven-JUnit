@@ -178,7 +178,17 @@ explicitly wait  : belirli elementler için zaman aşımı
 
     -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
 
-* * MAVEN, JUnıt, DropDown
+* * COOKIES (Çerezler) * *
+
+        "Cookie" ler, bir web sitesi tarafından tarayıcıya depolanan küçük veri parçacıklarıdır.
+
+        Tarayıcı, herhangi bir web sayfasına gittiğinde, o sayfanın cookie'lerini saklar ve
+        daha sonra o sayfaya geri döndüğünde, o cookie'leri tekrar gönderir. Bu sayede, web sitesi,
+        kullanıcının daha önce o sayfada ne yaptığını veya ne seçtiğini hatırlayabilir.
+
+    -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+* * MAVEN, JUNIT, DROPDOWN
 
 Maven : Bir projenin inşa edilebilmesi için gerekli tüm bilgileri içeren proje yönetim aracıdır.
 
@@ -190,7 +200,10 @@ DropDown : Dropdown menüler, listeden seçim yapmayı sağlamak amacıyla kulla
            Bu methodlar : selectByIndex(), selectByValue() ve selectByVisibleText()'dir. Aktif olarak kullanımı
            en makul ve kullanıslı olan method ise selectByVisibleText()'dir.
 
+
  */
+
+
 
 
 

@@ -16,6 +16,7 @@ public class C02_WindowHandle3 extends TestBase {
         //1. TechPro education sayfasinin title'inin "Techpro Education" metnini icerdigini test edin.
         driver.get("https://www.techproeducation.com");
         String techProHandle = driver.getWindowHandle();
+        System.out.println("techProHandle = " + techProHandle);
 
         Assert.assertTrue(driver.getTitle().contains("Techpro Education"));
 
