@@ -49,6 +49,7 @@ public class H05 extends TestBase {
         iphoneList.get(1).click();
 
     //ürünün title'ni ve fiyatını variable’a  assign edip ürünü sepete ekleyelim
+
         String addTitle1 = findId("productTitle").getText();
         addTitle1=addTitle1.split(" ")[1];
 
@@ -62,7 +63,7 @@ public class H05 extends TestBase {
         driver.get("https://www.amazon.com/");
 
     //dropdown’dan bebek bölümüne secin
-        WebElement aramaSonucu2 = driver.findElement(By.id("searchDropdownBox"));
+        WebElement aramaSonucu2 = findIdx("searchDropdownBox");
         Select select1 = new Select(aramaSonucu2);
         select1.selectByVisibleText("Baby");
 
@@ -81,7 +82,7 @@ public class H05 extends TestBase {
         String addTitle2 = findId("productTitle").getText();
         addTitle2=addTitle2.split(" ")[1];
 
-        String addPrice2 = findId("corePriceDisplay_desktop_feature_div").getText();
+        String addPrice2 = findIdx("corePriceDisplay_desktop_feature_div").getText();
 
         findId("add-to-cart-button").click();
 

@@ -134,6 +134,7 @@ public class InterviewQuestions01 {
 
 
 1- Actions nedir? Actions Class nedir ?
+
 *Actions selenium dan gelen bir kütüphanedir.
 Mouse ve Keyboard islemlerini gerçekleştirmek icin kullandigimiz hazır bir selenium kutuphanesidir.
 Ornegin, sag tiklamak(contextClick), çift tıklamak(doubleClick),
@@ -199,6 +200,106 @@ DropDown : Dropdown menüler, listeden seçim yapmayı sağlamak amacıyla kulla
            Select objesi oluşturularak elde ettiğimiz methodlar ile dropdown içerisinden istediğimiz seçimi yapabiliriz.
            Bu methodlar : selectByIndex(), selectByValue() ve selectByVisibleText()'dir. Aktif olarak kullanımı
            en makul ve kullanıslı olan method ise selectByVisibleText()'dir.
+
+    -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+* * EXCEPTION * *
+
+Interview Questions
+
+-Tell me 5 exception that you get.-5 adet selenium da aldigin exceptions dan bahset.
+-What type of exceptions do you get in selenium? - Seleniumda ki align exceptions tiplerinden bahset
+-What is your solution?-Cozum ne?
+-What type of waits do you use?- Hangi çesit wait kullanirsin?
+-Which wait do you prefer?- Hangi wait tercih edersin?
+-Why do you prefer that wait?- Neden onu tercih edersin?
+-How to you resolve synronization issue?-Senkronizasyon problemini nasil cozersin?
+
+>> NoSuchElementException
+
+-NoSuchElementException
+-Yanlis locator
+-Popup, yeni pencere, iframe…
+-Sayfa dolmada problemler ve yavaşlamalar
+-Sakli olan elementler
+
+Cözüm:
+-Locatorin dogrulugunu tekrar kontrol et
+-Manual test ile iframe, yeni pencere, alert…. gibi elementlerin varliğini kontrol et
+-Bekleme problemi olabilir. İmplicit wait bekleme suresini cozmuyor. Bu durumda explicit wait ya da fluent wait kullaniriz
+
+>> TimeOutException
+
+-Explicit wait kullanildiginda, ve element bulunamadiginda alinir.
+-Explicit wait & yanlis locator-> timeout
+-Explicit wait & doğru locator & sure yeterli degil -> timeout
+-Explicit wait & dogru locator & sure yeterli & iframe var ->  time out
+
+Solution:
+-Sureyi arttirmak
+-Farkli explicit kullanmak: wait visibilityOfElementLocated YERINE presenceOfElementLocated.
+ Yada javascript executor da ki waiter sayfa geçişlerini beklemek icin kullanabilirim
+-Locatori tekrar kontrol etmek
+-Frameworkunde hazir reusable method lar var Bu durumda timeoutexception aldigimda hızlıca o metotlar yardımıyla problemi cozebiliyoruz
+
+>> NullPointerException
+
+-Degiskenleri oluşturup instantiate etmediğimizde alırız(new kelimesini kullanmadigimizda)
+-Ornegin WebDriver driver; deyip = new ChromeDriver() demezisek null pointer exception aliriz
+
+Solution:
+-Degiskeni instantiate et
+
+>> StaleElementReferenceException
+
+Stale Element = eski, kullanılamaz durumda, kullanım artık elverişli degil
+-Sayfayi yenilediğinizde (refresh())
+-Sayfada ileri geri gittimizde
+
+COZUM:
+-Elementi tekrar bulmak
+
+>> WebDriverException
+
+-Driver versiyonları ve browser versiyonları ayni veya yakin olmadiginda alinir
+-Driver(Browser) kapattikdan sonra tekrar kullanmak istediğiniz durumlarda alınabilir.
+
+Solution
+-Framework designinin guzel kurulmuş olması gerekir, ornegin Driver sinifinda birden farza driver.quit() olmamali
+
+Others :
+
+InvalidSelectorException
+InvalidElementStateException
+ElementNotInteractableException
+ElementClickInterceptedException
+InvalidArgumentException
+JavascriptException
+RemoteDriverServerException
+
+Seleniumda aldigin 5 exception vardır
+Null pointer, no such element, time out, slale element reference, web driver
+
+Genel olarak exception aldiginda bozum yolun nedir?
+Hata mesajini oku
+Genel olarak zamanlama, yanlis locator, iframe hataları olabiliyor
+Hata mesajina gore exception I cozdukden sonra tekrar kodumu calistirim
+Selniumda kullandigin waitler nelerdir>
+Implicit yada explicit yada fluent
+
+Hangi waiti tercih edersin?
+Test Base (Driver sinifinda) implicit wait kullanıyorum.
+Cogu problemi bozuyor Cozemedigi durumlarda explicit wait kullanıyorum.
+
+Neden Explicit wait?
+Explicit wait element e ouzel yazilabilir. Yerel cozum gerektiğinde explicit wait I kullanmak zorundayiz.
+
+Senkronize(bekleme) problemlerini nasıl çözersin?
+Selenium waitlerini kullanarak. Implicit wait driver im da var, ama yetmedigi durumlarda explicit wait kullanirim.
+Bu yüzden ReusableMethod sinifimda tekrar tekrar kullanabileceğimiz explicit wait method lari var.
+Kolaylıkla explicit wait ile bekleme problemlerini cozebuliyoruz.
+
+    -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
 
 
  */
