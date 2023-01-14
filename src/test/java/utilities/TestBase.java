@@ -234,7 +234,7 @@ public abstract class TestBase {
         return element;
     }
 
-    //==========Return a list of string given a list of Web Element====////
+    // Return a list of string given a list of Web Element
     public static List<String> getElementsText(List<WebElement> list) {
         List<String> elementText = new ArrayList<>();
         for (WebElement w : list) {
@@ -245,7 +245,7 @@ public abstract class TestBase {
         return elementText;
     }
 
-    //========Returns the Text of the element given an element locator==//
+    // Returns the Text of the element given an element locator
     public static List<String> getElementsText(By locator) {
         List<WebElement> elements = driver.findElements(locator);
         List<String> elementText = new ArrayList<>();

@@ -1,21 +1,27 @@
-package day14;
+package day15;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import utilities.TestBase;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class C03_ExtentReports extends TestBase {
+public class C01_ExtentReports2 {
 
     //    HATIRLAMAMIZ GEREKEN 3 CLASS
     protected static ExtentReports extentReports;
     protected static ExtentHtmlReporter extentHtmlReporter;
     protected static ExtentTest extentTest;
-    @Test
-    public void extentReportsTest(){
+
+
+
+    @BeforeClass
+    public static void extendReportsSetUp() {
+
 
 //      REPORT  PATH
         String currentTime = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
@@ -46,18 +52,21 @@ public class C03_ExtentReports extends TestBase {
         extentReports.attachReporter(extentHtmlReporter);
         extentTest = extentReports.createTest("Extent Report Login Test", "Smoke Test Report");
 
-//        TUM AYARLAR BITTI. EXTENT TEST OBJECT'I ILE LOGLAMA(RAPORA YAZDIRMA) ISLEMINI YAPABILIRIM
-        extentTest.pass("The user goes to homepage");
-        driver.get("https://techproeducation.com");
+    }
 
-//        LMS SAYFASINA GIDELIM
-        extentTest.pass("The user goes to LMS page");
-        driver.findElement(By.linkText("LMS LOGIN")).click();
+    @Test
+    public void extentReportsTest() {
 
-//        TEST BITTI
-        extentTest.pass("TEST BASARIYLA GERCEKLETI");
+        extentTest.pass("PASS");
+        extentTest.info("Bilgilendirme Notu");
+        extentTest.fail("FAILED");
+        extentTest.warning("Uyarı Mesajı");
+        extentTest.skip("Atlama Mesajı");
+        extentTest.fatal("Sistem Çöküş Hatası");
+    }
 
-//        RAPORU GOSTER
+    @AfterClass
+    public static void afterClass()  {
         extentReports.flush();
 
     }
