@@ -3,10 +3,7 @@ package day14;
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import utilities.TestBase;
 
 import java.io.File;
@@ -41,10 +38,10 @@ public class C01_Screenshot1 extends TestBase {
         FileUtils.copyFile(goruntu,new File(path));
 
         //-“QA” aramasi yap
-        findCss("input[title='Search']").sendKeys("QA", Keys.ENTER);
+        find(By.cssSelector("input[title='Search']")).sendKeys("QA", Keys.ENTER);
 
         //Acilen sayfanin metnini test et ve ekran goruntusu al: “Search Results for: QA”
-        WebElement text = findCss("div[class='elementor-widget-container']>h1");
+        WebElement text = find(By.cssSelector("div[class='elementor-widget-container']>h1"));
 //                        findXPath("//*[contains(text(),'Search Results for')]");
 
         Assert.assertEquals("Search Results for: QA",text.getText());

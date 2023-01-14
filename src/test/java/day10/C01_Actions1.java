@@ -2,6 +2,7 @@ package day10;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
@@ -21,7 +22,7 @@ public class C01_Actions1 extends TestBase {
         driver.get("https://the-internet.herokuapp.com/context_menu");
 
 //    Kutuya sag tıklayın
-        WebElement box = findId("hot-spot");
+        WebElement box = find(By.id("hot-spot"));
         action.contextClick(box).perform();
 
 //    Alert’te cikan yazinin “You selected a context menu” oldugunu test edin

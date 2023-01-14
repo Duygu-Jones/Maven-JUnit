@@ -2,6 +2,7 @@ package day10;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
@@ -18,11 +19,11 @@ public class C02_Actions2 extends TestBase {
         driver.get("https://www.amazon.com/");
 
         //2. Account & list e uzerinde bekle
-        WebElement accountList = findId("nav-link-accountList");
+        WebElement accountList = find(By.id("nav-link-accountList"));
         actions.moveToElement(accountList).perform();
 
         //3.Acilan pencerede Account linkine tıkla
-        findXPath("//span[.='Account']").click();
+        find(By.xpath("//span[.='Account']")).click();
 
         //4.Acilan sayfanin Title inin, your Account oldugunu dogrula
         Assert.assertTrue(driver.getTitle().contains("Your Account"));

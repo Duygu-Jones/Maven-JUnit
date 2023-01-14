@@ -1,6 +1,7 @@
 package day10;
 
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
@@ -19,8 +20,8 @@ public class C04_Actions4 extends TestBase {
 //        And user moves the target element(Drag me to my target) in to  destination(Drop here)
         driver.switchTo().frame(0); //iframe olduğu için önce onun içerisine girdik
 
-        WebElement kaynak = findId("draggable");
-        WebElement hedef = findId("droppable");
+        WebElement kaynak = find(By.id("draggable"));
+        WebElement hedef = find(By.id("droppable"));
 
         actions.dragAndDrop(kaynak,hedef).perform();//ilk elementi 2.elementin olduğu bölgeye taşıdık
 
@@ -35,8 +36,8 @@ public class C04_Actions4 extends TestBase {
 //        And user moves the target element(Drag me to my target) in to  destination(Drop here)
         driver.switchTo().frame(0); //iframe olduğu için önce onun içerisine girdik
 
-        WebElement kaynak = findId("draggable");
-        WebElement hedef = findId("droppable");
+        WebElement kaynak = find(By.id("draggable"));
+        WebElement hedef = find(By.id("droppable"));
 
         actions.
                 clickAndHold(kaynak).// Elemanı tut
@@ -54,7 +55,7 @@ public class C04_Actions4 extends TestBase {
 //        And user moves the target element(Drag me to my target) in to  destination(Drop here)
         driver.switchTo().frame(0); //iframe olduğu için önce onun içerisine girdik
 
-        WebElement kaynak = findId("draggable");
+        WebElement kaynak = find(By.id("draggable"));
 
         actions
                 .clickAndHold(kaynak)

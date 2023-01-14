@@ -14,7 +14,7 @@ public class H03 extends TestBase {
         driver.get("http://webdriveruniversity.com/Actions");
 
     //2- Hover over Me First" kutusunun ustune gelin
-        WebElement firstBox = findXPath("//button[text()='Hover Over Me First!']");
+        WebElement firstBox = find(By.xpath("//button[text()='Hover Over Me First!']"));
         hoverOverOnElementActions(firstBox);
 
     //Link 1" e tiklayin
@@ -28,14 +28,14 @@ public class H03 extends TestBase {
 
     //“Click and hold" kutusuna basili tutun
        Actions actions = new Actions(driver);
-       WebElement clickBox = findId("click-box");
+       WebElement clickBox = find(By.id("click-box"));
        actions.clickAndHold(clickBox).perform();
 
     //7-“Click and hold" kutusunda cikan yaziyi yazdirin
         System.out.println(clickBox.getText());
 
     //8- “Double click me" butonunu cift tiklayin
-        doubleClick(findId("double-click"));
+        doubleClick(find(By.id("double-click")));
 
     }
 }

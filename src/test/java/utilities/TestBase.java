@@ -88,45 +88,33 @@ public abstract class TestBase {
         driver.switchTo().window(list.get(windowNumber));
     }
 
-    public static WebElement findId(String key){
+    //   Find Element
+    public static WebElement find(By locator){
 
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(15));
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(key)));
-        return element;
-    }
-    public static WebElement findIdx(String key){
-
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(15));
-        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(key)));
-        return element;
-    }
-    public static WebElement findCss(String key){
-
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(15));
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(key)));
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         return element;
     }
 
-    public static WebElement findXPath(String key){
+    //   Find Elements
+    public List<WebElement> findAll(By locator){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+    }
+
+    //   Find with Presence Wait Element
+    public static WebElement findPresenceWait(By locator){
 
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(15));
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(key)));
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         return element;
     }
 
-    //Js Executer Css
-    public static void jsClickCss(String key){
+    //   Js Executer Click
+    public static void jsClick(By locator){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-        WebElement elementName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(key)));
-        js.executeScript("arguments[0].click();",elementName);
-    }
-
-    //Js Executer xPath
-    public static void jsClickXPath(String key){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-        WebElement elementName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(key)));
+        WebElement elementName = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         js.executeScript("arguments[0].click();",elementName);
     }
 

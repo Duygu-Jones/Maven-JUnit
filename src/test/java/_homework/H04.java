@@ -2,6 +2,7 @@ package _homework;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import utilities.TestBase;
 
 public class H04 extends TestBase {
@@ -17,10 +18,10 @@ public class H04 extends TestBase {
 
     //videoyu izlemek icin Play tusuna basin
         driver.switchTo().frame(0);
-        findCss("button[class='ytp-large-play-button ytp-button ytp-large-play-button-red-bg']").click();
+        find(By.cssSelector("button[class='ytp-large-play-button ytp-button ytp-large-play-button-red-bg']")).click();
 
     //videoyu calistirdiginizi test edin
-        Assert.assertTrue(findCss("a[title='youtube.com sitesinde izle']").isDisplayed());
+        Assert.assertTrue(find(By.cssSelector("a[title='youtube.com sitesinde izle']")).isDisplayed());
 
     }
 }

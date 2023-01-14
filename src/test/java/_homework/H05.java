@@ -35,8 +35,8 @@ public class H05 extends TestBase {
         select.selectByVisibleText("Electronics");
 
     //arama kutusuna iphone yazip aratin ve bulunan sonuç sayısını yazdırın
-        findId("twotabsearchtextbox").sendKeys("iphone", Keys.ENTER);
-        String result = findCss(".s-breadcrumb").getText();
+        find(By.id("twotabsearchtextbox")).sendKeys("iphone", Keys.ENTER);
+        String result = find(By.cssSelector(".s-breadcrumb")).getText();
         System.out.println("result = " + result);
 
     //sonuc sayisi bildiren yazinin iphone icerdigini test edin
@@ -50,12 +50,12 @@ public class H05 extends TestBase {
 
     //ürünün title'ni ve fiyatını variable’a  assign edip ürünü sepete ekleyelim
 
-        String addTitle1 = findId("productTitle").getText();
+        String addTitle1 = find(By.id("productTitle")).getText();
         addTitle1=addTitle1.split(" ")[1];
 
-        String addPrice1 = findId("corePriceDisplay_desktop_feature_div").getText();
+        String addPrice1 = find(By.id("corePriceDisplay_desktop_feature_div")).getText();
 
-        findId("add-to-cart-button").click();
+        find(By.id("add-to-cart-button")).click();
 
     //Test03
     //yeni bir sekme açarak amazon anasayfaya gidin
@@ -63,7 +63,7 @@ public class H05 extends TestBase {
         driver.get("https://www.amazon.com/");
 
     //dropdown’dan bebek bölümüne secin
-        WebElement aramaSonucu2 = findIdx("searchDropdownBox");
+        WebElement aramaSonucu2 = findPresenceWait(By.id("searchDropdownBox"));
         Select select1 = new Select(aramaSonucu2);
         select1.selectByVisibleText("Baby");
 
@@ -71,7 +71,7 @@ public class H05 extends TestBase {
         aramaSonucu2.sendKeys(Keys.TAB,"bebek puset",Keys.ENTER);
 
     //sonuç yazsının puset içerdiğini test edin
-        String result2 = findCss("span[class='a-color-state a-text-bold']").getText();
+        String result2 = find(By.cssSelector("span[class='a-color-state a-text-bold']")).getText();
         Assert.assertTrue(result2.contains("puset"));
 
     //5-üçüncü ürüne relative locater kullanarak tıklayin
@@ -79,17 +79,17 @@ public class H05 extends TestBase {
         list.get(0).click();
 
     //6-title ve fiyat bilgilerini assign edelim ve ürünü sepete ekleyin
-        String addTitle2 = findId("productTitle").getText();
+        String addTitle2 = find(By.id("productTitle")).getText();
         addTitle2=addTitle2.split(" ")[1];
 
-        String addPrice2 = findIdx("corePriceDisplay_desktop_feature_div").getText();
+        String addPrice2 = findPresenceWait(By.id("corePriceDisplay_desktop_feature_div")).getText();
 
-        findId("add-to-cart-button").click();
+        find(By.id("add-to-cart-button")).click();
 
     // Test 4
     //1-sepetteki ürünlerle eklediğimiz ürünlerin aynı olduğunu isim ve fiyat olarak doğrulayın
 
-        findId("nav-cart-count-container").click();
+        find(By.id("nav-cart-count-container")).click();
 
 //        List<WebElement> newTitle =driver.findElements(By.cssSelector("li[class='a-spacing-mini']"));
 

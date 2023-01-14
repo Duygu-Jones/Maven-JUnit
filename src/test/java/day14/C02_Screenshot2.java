@@ -2,6 +2,7 @@ package day14;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
 import utilities.TestBase;
@@ -22,7 +23,7 @@ public class C02_Screenshot2 extends TestBase {
         //Sosyal medya elemanlarını goruntusunu al
 
         // 1 - Ekran goruntusunu çek
-        WebElement sosyalMedyaIcon = findCss("div[data-id='d7545f2']");
+        WebElement sosyalMedyaIcon = find(By.cssSelector("div[data-id='d7545f2']"));
         File image = sosyalMedyaIcon.getScreenshotAs(OutputType.FILE);
 
         // 2. goruntuyu kaydet
@@ -35,7 +36,7 @@ public class C02_Screenshot2 extends TestBase {
         // Ya da Method kullanırız ;
 
         takeScreenshotOfElement(sosyalMedyaIcon);
-        takeScreenshotOfElement(findCss("div[data-id='898ce2e']"));
+        takeScreenshotOfElement(find(By.cssSelector("div[data-id='898ce2e']")));
 
     }
 }
