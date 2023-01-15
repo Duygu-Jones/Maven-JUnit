@@ -19,7 +19,7 @@ public class C02_WebTables extends TestBase {
 
     @Test
     public void table1Print(){
-        driver.get("https://the-internet.herokuapp.com/tables");
+            driver.get("https://the-internet.herokuapp.com/tables");
         String table1 = driver.findElement(By.xpath("//table[@id='table1']")).getText();
         System.out.println("TABLE 1 VERILERI");
         System.out.println(table1);
@@ -54,4 +54,22 @@ public class C02_WebTables extends TestBase {
         sutun5.forEach(veri-> System.out.println(veri.getText()));
     }
 
+
+    //Task 5 : Iki parametreli bir Java metot oluşturalım: printData
+    //Parameter 1 = row numarasi
+    //Parameter 2 = column numarasi
+    //printData(2,3); => 2nd satir, 3rd sutun daki datayı print etsin
+
+
+    public void printData(int row, int column){
+        driver.get("https://the-internet.herokuapp.com/tables");
+        WebElement tableData=driver.findElement(By.xpath("//table[@id='table1']//tbody//tr[" + row + "]//td[" +column + "]"));
+        System.out.println(tableData.getText());
+
+    }
+
+    @Test
+    public void printDataTest() {
+        printData(2,3);
+    }
 }
