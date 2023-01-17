@@ -9,6 +9,17 @@ public class C03_NullPointerException {
     @Test
     public void nullPointerExceptionTest(){
 
+     /*
+        >> NullPointerException
+
+        -Degiskenleri oluşturup instantiate etmediğimizde alırız(new kelimesini kullanmadigimizda)
+        -Ornegin WebDriver driver; deyip = new ChromeDriver() demezisek null pointer exception aliriz
+
+        Solution:
+        -Degiskeni instantiate et
+
+     */
+
         driver.get("https://www.techproeducation.com");//java.lang.NullPointerException
     }
     @Test

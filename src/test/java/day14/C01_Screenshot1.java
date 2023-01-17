@@ -28,7 +28,7 @@ public class C01_Screenshot1 extends TestBase {
         File goruntu = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         //2. Almis olduğum ekran goruntusunu belirttiğim bir PATH'e kaydet  .dir = directory = dosya
-        String currentDate=new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        String currentDate=new SimpleDateFormat("yyyy.MM.dd.hh.mm.ss").format(new Date());
         String path = System.getProperty("user.dir")+"\\test-output\\EkranGoruntuleri\\"+currentDate+"image.png";
 
 
@@ -46,7 +46,7 @@ public class C01_Screenshot1 extends TestBase {
 
         Assert.assertEquals("Search Results for: QA",text.getText());
 
-        takeScreenShotOfPage();
+        takeScreenShotOfPage();// > Tum sayfanın ekran goruntusunu alır.
 
     }
 }

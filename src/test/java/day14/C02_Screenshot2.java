@@ -27,7 +27,7 @@ public class C02_Screenshot2 extends TestBase {
         File image = sosyalMedyaIcon.getScreenshotAs(OutputType.FILE);
 
         // 2. goruntuyu kaydet
-        String currentTime = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        String currentTime = new SimpleDateFormat("yyyy.MM.dd.hh.mm.ss").format(new Date());
 
         // Path of screenshot save folder               folder / folder    /file name
         String path = System.getProperty("user.dir")+"/test-output/Screenshots/"+currentTime+"image.png";
@@ -35,7 +35,7 @@ public class C02_Screenshot2 extends TestBase {
 
         // Ya da Method kullanırız ;
 
-        takeScreenshotOfElement(sosyalMedyaIcon);
+        takeScreenshotOfElement(sosyalMedyaIcon); // Parametre verilirse spesific bir elementin ekran goruntusunu alır
         takeScreenshotOfElement(find(By.cssSelector("div[data-id='898ce2e']")));
 
     }

@@ -2,12 +2,15 @@ package day13;
 
 public class EkranGoruntusu {
 
-       /*
+
+
+    /*
+
        Tester olarak ekran görüntüsü neden alınır ?
           Dökümantasyon için
              Geçen Test Case'lerin geçtiğini kayda geçirmek
              Kalan Test Case'lerin de kaldığını/ bug bulunduğunda kayda geçirmek için
-     */
+   */
 
         /*
             https://www.techproeducation.com sayfasına git

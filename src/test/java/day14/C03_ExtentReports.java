@@ -18,7 +18,7 @@ public class C03_ExtentReports extends TestBase {
     public void extentReportsTest(){
 
 //      REPORT  PATH
-        String currentTime = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        String currentTime = new SimpleDateFormat("yyyy.MM.dd.hh.mm.ss").format(new Date());
         String path = System.getProperty("user.dir")+"/test-output/reports/"+currentTime+"html_report.html";
 //        creating HTML report in the path
         extentHtmlReporter = new ExtentHtmlReporter(path);

@@ -5,6 +5,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utilities.TestBase;
 public class C04_StaleElementReferenceException extends TestBase {
+
+    /*
+      >> StaleElementReferenceException
+
+       Stale Element = eski, kullanılamaz durumda, kullanım artık elverişli degil
+       -Sayfayi yenilediğinizde (refresh())
+       -Sayfada ileri geri gittimizde
+
+       COZUM:
+       -Elementi tekrar bulmak
+  */
+
     @Test
     public void staleElementReferenceExceptionTest1(){
 
@@ -22,9 +34,10 @@ public class C04_StaleElementReferenceException extends TestBase {
         driver.navigate().back();//tekrar ana sayfaya gittik
         waitFor(5);
         lmsLoginLink.click();//LMS e git. org.openqa.selenium.StaleElementReferenceException:
-        /*
+
+     /*
         lmsLoginLink linkini sayfa yenilendikden(back()) sonra kullandigim icin StaleElementReferenceException aldim
-         */
+      */
     }
     @Test
     public void staleElementReferenceExceptionTest2(){
