@@ -3,12 +3,12 @@ package day16;
 import org.apache.poi.ss.usermodel.*;
 import org.junit.Test;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class C02_WriteExcel {
+
 
     @Test
     public void writeExcelTest() throws IOException {

@@ -28,6 +28,7 @@ public abstract class TestBase {
 //    driver objesini olustur. Driver ya public yada protected olmali.
 //    Sebepi child classlarda gorulebilir olmasi
 
+
     //  driver objesini olustur.
     protected static WebDriver driver;
 
@@ -116,6 +117,35 @@ public abstract class TestBase {
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         WebElement elementName = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         js.executeScript("arguments[0].click();",elementName);
+    }
+
+    //   Js Executer Scroll
+    public static void jsScroll(By locator){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+        WebElement elementName = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        js.executeScript("arguments[0].scrollIntoView(true);",elementName);
+    }
+
+    //   Js Executer SendKeys
+    public void jsSendKeys(By locator, String metin){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+        WebElement elementName = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        js.executeScript("arguments[0].setAttribute('value','"+metin+"')",elementName);
+
+    }
+
+    //    SAYFANIN EN ALTINA IN
+    public void scrollEndJS(){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+    }
+
+    //    SAYFANIN EN USTUNE ÇIK
+    public void scrollTopJS(){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
     }
 
     //   HARD WAIT
