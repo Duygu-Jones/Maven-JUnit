@@ -136,6 +136,26 @@ public abstract class TestBase {
 
     }
 
+    //   Belirli bir WebElement'in id değerini String olarak alır ve value attribute değerini döndürür
+
+
+    //    input elementindeki degerleri(value) al
+//   Belirli bir WebElement'in id değerini String olarak alır ve value attribute değerini String olarak döndürür
+//    return
+//    document HTML'E GIT
+//    .getElementById('" + idOfElement + "') ID'si VERILEN ELEMENTI BUL
+//    .value")
+//    .toString();
+    public void getValueByJS(String idOfElement) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String text = js.executeScript("return document.getElementById('" + idOfElement + "').value").toString();
+        System.out.println("Kutudaki value: " + text);
+//        NOT: document.querySelector("p").value;  -> TAG KULLANILABILIR
+//             document.querySelector(".example").value; -> CSS DEGERI KULLANILABILIR
+//             document.querySelector("#example").value; -> CSS DEGERI KULLANILABILIR
+    }
+
+
     //    SAYFANIN EN ALTINA IN
     public void scrollEndJS(){
         JavascriptExecutor js = (JavascriptExecutor)driver;
