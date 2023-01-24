@@ -20,6 +20,7 @@ Ayni sayfada tekrar Enroll Free elementi gorunur olacak sekilde scroll et ve ekr
      */
     @Test
     public void scrollIntoViewTest() throws IOException {
+
         driver.get("https://www.techproeducation.com");
         waitFor(3);
 //        1. Elementi bul
