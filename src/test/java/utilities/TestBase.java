@@ -22,6 +22,7 @@ import java.util.List;
 
 public abstract class TestBase {
 
+
 //    TestBase i abstract yapmamizin sebebi bu sinifin objesini olusturmak istemiyorum
 //    TestBase testBase = new TestBase(); -> YAPILAMAZ
 //    Amacim bu sinifi extend etmek ve icindeki hazir metodlari kullanmak
@@ -148,7 +149,7 @@ public abstract class TestBase {
 //    .toString();
     public void getValueByJS(String idOfElement) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        String text = js.executeScript("return document.getElementById('" + idOfElement + "').value").toString();
+        String text = (String) js.executeScript("return document.getElementById('" + idOfElement + "').value");
         System.out.println("Kutudaki value: " + text);
 //        NOT: document.querySelector("p").value;  -> TAG KULLANILABILIR
 //             document.querySelector(".example").value; -> CSS DEGERI KULLANILABILIR

@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.TestBase;
 import java.time.Duration;
 public class C02_ExplicitWait extends TestBase {
+
+
     /*
     https://the-internet.herokuapp.com/dynamic_loading/1
     Start buttonuna tıkla
@@ -32,4 +34,5 @@ public class C02_ExplicitWait extends TestBase {
         String helloWorldText = helloWorldElement.getText();
         Assert.assertEquals("Hello World!",helloWorldText);
     }
+
 }

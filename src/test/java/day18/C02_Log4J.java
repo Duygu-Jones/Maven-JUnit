@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 public class C02_Log4J {
+
 //3. Logger object olustur:
 //    private static Logger logger = LogManager.getLogger(Demo1.class.getName());
 //4. Logger fonksiyonuyla istenilen fonksiyonu kullan

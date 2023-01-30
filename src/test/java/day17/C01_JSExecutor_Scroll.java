@@ -3,21 +3,18 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.TestBase;
 import java.io.IOException;
-import java.time.Duration;
 
 public class C01_JSExecutor_Scroll extends TestBase {
-    /*
-scrollIntoViewTest metotu olustur
-Techpro education ana sayfasina git
-We Offer elementi gorunur olacak sekilde uzerine scroll et ve ekran gorunturunu al-DONE
-Ayni sayfada Enroll Free elementi gorunur olacak sekilde scroll et ve ekran goruntusunu al
-Ayni sayfada WHY US? elementi gorunur olacak sekilde scroll et ve ekran goruntusunu al
-Ayni sayfada tekrar Enroll Free elementi gorunur olacak sekilde scroll et ve ekran goruntusunu al
-     */
+/*
+    scrollIntoViewTest metotu olustur
+    Techpro education ana sayfasina git
+    We Offer elementi gorunur olacak sekilde uzerine scroll et ve ekran gorunturunu al-DONE
+    Ayni sayfada Enroll Free elementi gorunur olacak sekilde scroll et ve ekran goruntusunu al
+    Ayni sayfada WHY US? elementi gorunur olacak sekilde scroll et ve ekran goruntusunu al
+    Ayni sayfada tekrar Enroll Free elementi gorunur olacak sekilde scroll et ve ekran goruntusunu al
+*/
     @Test
     public void scrollIntoViewTest() throws IOException {
 
@@ -28,11 +25,13 @@ Ayni sayfada tekrar Enroll Free elementi gorunur olacak sekilde scroll et ve ekr
         waitFor(3);
 //        2. JS executor objesi olustur
         JavascriptExecutor js = (JavascriptExecutor)driver;
+
 //        3. Yapmak istedigim islemi js.executeScript metot u ile yap
 //        scrollIntoView(true); metotu belirli bir elemente scroll yapmak icin kullanilir
 //        arguments[0] ILK PARAMETREDEKI ELEMENT
         js.executeScript("arguments[0].scrollIntoView(true);",weOffer);
         waitFor(3);
+
 //        sayfa goruntusunu al
         takeScreenShotOfPage();
 //        Ayni sayfada Enroll Free elementi gorunur olacak sekilde scroll et ve ekran goruntusunu al
