@@ -340,7 +340,7 @@ Reusable classimda extent reports ile alakalı reusable metotlarım var. Bu meto
 3 onemli class vardır:
 Extent reports
 Extent Html Reporter.  ====>>>>>>> are user for generation the reports
-Extent Tess
+Extent Test
 Bu sınıflar yardımıyla, platform, browser, environment, tester, takim bilgileri gibi özel proje bilgileri ekleyebilirim. Ayrıca extent test objesi kullanarak pass, fail, skip gibi loglamalar yapabilirim.
 Dependency lerini nerden alıyorsun?
 Şirkette internal bir repository miz var. Bu repodan ihtiyacım olacak dependencyi alıp kullanırım.
@@ -367,6 +367,12 @@ Test caselerimde çeşitli datalar kullanıyorum. Ornegin kullanıcı adi, kulla
 Bu datalari test caselerde kullanmak icin excelden çekiyorum ve test caselerimde kullanıyorum.
 Datalari excelde tutmanı faydası, dataların derli toplu bir yerde olması, data güvenliği, data kayıplarına engel olmak.
 
+ - Apache Poi dependncy'sini yükleyip oradan gelen methodlar ile Excel'den veri okuma ve yazdırma işlemleri yapabilirim.
+
+   Bunun için de workbook > sheet > row  adımlarını takip edebilirim.
+   Workbook > Exceli aç
+   getSheet > Sayfaya git
+   getRow > Satıra git
 
  */
 

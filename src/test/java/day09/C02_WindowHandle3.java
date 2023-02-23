@@ -22,19 +22,23 @@ public class C02_WindowHandle3 extends TestBase {
 
         //2. Yeni bir pencerede Amazon sayfasini acip title'in "Amazon" metnini icerdigini test edin.
         waitFor(3);
-        driver.switchTo().newWindow(WindowType.WINDOW);// 1 : Yeni pencere olusturur. 2 : Oraya gecis yapar.
+        driver.switchTo().newWindow(WindowType.TAB);// 1 : Yeni pencere olusturur. 2 : Oraya gecis yapar.
         driver.get("https://www.amazon.com");
         Assert.assertTrue(driver.getTitle().contains("Amazon"));
+        driver.close();  // Açılan sayfayı kapatıp kalan sayfayla devam edebiliyoruz * * *
+        driver.switchTo().window(techProHandle);
+        System.out.println(driver.getTitle());
 
-        //3. Yeni bir pencerede LinkedIn sayfasini acip title'in "LinkedIn" metnini icerdigini test edin.
-        waitFor(3);
-        driver.switchTo().newWindow(WindowType.WINDOW);// 1 : Yeni pencere olusturur. 2 : Oraya gecis yapar.
-        driver.get("https://www.linkedin.com");
-        Assert.assertTrue(driver.getTitle().contains("LinkedIn"));
 
-        //4. ilk sayfaya geri dönelim
-        waitFor(3);
-        driver.switchTo().window(techProHandle);//Aldiğimiz handle degeriyle switchTo() yaparak döneriz.
+    //        //3. Yeni bir pencerede LinkedIn sayfasini acip title'in "LinkedIn" metnini icerdigini test edin.
+    //        waitFor(3);
+    //        driver.switchTo().newWindow(WindowType.WINDOW);// 1 : Yeni pencere olusturur. 2 : Oraya gecis yapar.
+    //        driver.get("https://www.linkedin.com");
+    //        Assert.assertTrue(driver.getTitle().contains("LinkedIn"));
+    //
+    //        //4. ilk sayfaya geri dönelim
+    //        waitFor(3);
+    //        driver.switchTo().window(techProHandle);//Aldiğimiz handle degeriyle switchTo() yaparak döneriz.
 
     }
 }
