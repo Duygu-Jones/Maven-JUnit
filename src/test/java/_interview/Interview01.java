@@ -13,6 +13,7 @@ public class Interview01 {
     Select objesi oluşturularak elde ettiğimiz methodlar ile dropdown içerisinden istediğimiz seçimi yapabiliriz.
     Bu methodlar : selectByIndex(), selectByValue() ve selectByVisibleText()'dir. Aktif olarak kullanımı
     en makul ve kullanıslı olan method ise selectByVisibleText()'dir.
+    *
 
  */
 
